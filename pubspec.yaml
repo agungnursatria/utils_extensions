@@ -1,11 +1,11 @@
-name: utilsextensions
+name: utils_extensions
 description: Flutter utils and data type extensions
 version: 0.0.1
 author:
 homepage:
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:
