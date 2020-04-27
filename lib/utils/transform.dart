@@ -11,6 +11,8 @@ class TransformUtil {
 
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name
+  ///
+  /// If First Only is `true`, the only letter get uppercase is the first letter
   static String capitalize(String s, {bool firstOnly = false}) {
     if (Validator.isNullOrBlank(s)) return null;
     if (firstOnly) return capitalizeFirst(s);
@@ -21,7 +23,7 @@ class TransformUtil {
     return newStr;
   }
 
-  /// Capitalize first word inside string
+  /// Uppercase first letter inside string and let the others lowercase
   /// Example: your name => Your name
   static String capitalizeFirst(String s) {
     if (Validator.isNullOrBlank(s)) return null;

@@ -52,6 +52,8 @@ extension StringParse on String {
 
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name
+  ///
+  /// If First Only is `true`, the only letter get uppercase is the first letter
   String toCapitalize({bool firstOnly = false}) =>
       TransformUtil.capitalize(this, firstOnly: firstOnly);
 
