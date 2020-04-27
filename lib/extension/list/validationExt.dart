@@ -12,6 +12,7 @@ extension ListValidation on List {
   bool isNullOrBlank() => Validator.isNullOrBlank(this);
 
   /// Checks if all value inside list are same.
+  /// Example: [1,1,1,1] -> true
   bool isOneAKind() => Validator.isOneAKind(this);
 }
 

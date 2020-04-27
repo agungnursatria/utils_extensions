@@ -73,6 +73,7 @@ extension StringValidation on String {
   bool isPalindrom() => Validator.isPalindrom(this);
 
   /// Checks if all character inside string are same.
+  /// Example: 111111 -> true, wwwww -> true
   bool isOneAKind() => Validator.isOneAKind(this);
 
   /// Checks if string is Currency.

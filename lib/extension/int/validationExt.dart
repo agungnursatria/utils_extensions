@@ -9,4 +9,8 @@ extension IntValidation on int {
 
   /// Checks if string is binary (example: 01010101).
   bool isBinary() => Validator.isBinary(this.toString());
+
+  /// Checks if all int value are same.
+  /// Example: 111111 -> true
+  bool isOneAKind() => Validator.isOneAKind(this);
 }

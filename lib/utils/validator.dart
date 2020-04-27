@@ -171,12 +171,22 @@ class Validator {
   }
 
   /// Checks if all data have same value.
+  /// Example: 111111 -> true, wwwww -> true, [1,1,1,1] -> true
   static bool isOneAKind(dynamic s) {
     if ((s is String || s is List) && !isNullOrBlank(s)) {
       var first = s[0];
       var isOneAKind = true;
       for (var i = 0; i < s.length; i++) {
         if (s[i] != first) isOneAKind = false;
+      }
+      return isOneAKind;
+    }
+    if (s is int) {
+      String value = s.toString();
+      var first = value[0];
+      var isOneAKind = true;
+      for (var i = 0; i < value.length; i++) {
+        if (value[i] != first) isOneAKind = false;
       }
       return isOneAKind;
     }
