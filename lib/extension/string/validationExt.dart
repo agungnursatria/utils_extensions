@@ -118,8 +118,10 @@ extension StringValidation on String {
   bool isContainsAnyOnCaseInsensitive(String compareTo) =>
       Validator.isContainsAnyOnCaseInsensitive(this, compareTo);
 
+  /// Checks if string value is camelcase.
   bool isCamelCase() => this == TransformUtil.camelCase(this);
 
-  bool isCapitalized({bool firstOnly = false}) =>
+  /// Checks if string value is capitalize.
+  bool isCapitalize({bool firstOnly = false}) =>
       this == TransformUtil.capitalize(this, firstOnly: firstOnly);
 }
