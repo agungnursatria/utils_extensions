@@ -28,6 +28,12 @@ class RegexPattern {
   /// Allowing "_" and "." in middle
   static Pattern username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]{1,28}[a-zA-Z0-9]$';
 
+  /// DateTime regex (UTC)
+  /// Unformatted date time (UTC and Iso8601)
+  /// Example: 2020-04-27 08:14:39.977, 2020-04-27T08:14:39.977, 2020-04-27 01:14:39.977Z
+  static Pattern basicDateTime =
+      r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}.\d{3}Z?$';
+
   /// Binary regex
   /// Consist only 0 & 1
   static Pattern binary = r'^[0-1]*$';
@@ -65,11 +71,10 @@ class RegexPattern {
   /// Passport No. regex
   static Pattern passport = r'^(?!^0+$)[a-zA-Z0-9]{6,9}$';
 
-  /// US Currency regex
-  static Pattern usCurrency =
-      r'^\$?[ ]?[-]?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\.[0-9]{1,2})?$';
+  /// Currency regex
+  static Pattern currency =
+      r'^(S?\$|\₩|Rp|\¥|\€|\₹|\₽|fr|R$|R)?[ ]?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?( ?(USD?|AUD|NZD|CAD|CHF|GBP|CNY|EUR|JPY|IDR|MXN|NOK|KRW|TRY|INR|RUB|BRL|ZAR|SGD|MYR))?$';
 
-  /// Indonesia Currency regex
-  static Pattern idCurrency =
-      r'^(Rp ?)?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?$';
+  /// Digit Only regex
+  static Pattern digitOnly = r'^\d{1,}$';
 }
