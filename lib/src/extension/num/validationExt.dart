@@ -1,4 +1,4 @@
-import 'package:utils_extensions/utils/validator.dart';
+import 'package:utils_extensions/src/utils/validator_util.dart';
 
 /// Num extension also works on int and double data type
 extension NumValidation on num {
@@ -13,38 +13,38 @@ extension NumValidation on num {
 
   /// Checks if string is phone number.
   bool isPhoneNumber({int minLength, int maxLength}) =>
-      Validator.isPhoneNumber(this.toString()) &&
+      ValidatorUtil.isPhoneNumber(this.toString()) &&
       ((minLength != null)
-          ? Validator.isLengthGreaterOrEqual(this, minLength)
+          ? ValidatorUtil.isLengthGreaterOrEqual(this, minLength)
           : true) &&
       ((maxLength != null)
-          ? Validator.isLengthLowerOrEqual(this, maxLength)
+          ? ValidatorUtil.isLengthLowerOrEqual(this, maxLength)
           : true);
 
   /// Checks if data is null or Blank (Empty or only contains whitespace).
-  bool isNullOrBlank() => Validator.isNullOrBlank(this);
+  bool isNullOrBlank() => ValidatorUtil.isNullOrBlank(this);
 
   /// Checks if length of num is LOWER than maxLength.
   bool isLengthLowerThan(int maxLength) =>
-      Validator.isLengthLowerThan(this, maxLength);
+      ValidatorUtil.isLengthLowerThan(this, maxLength);
 
   /// Checks if length of num is LOWER OR EQUAL to maxLength.
   bool isLengthLowerOrEqual(int maxLength) =>
-      Validator.isLengthLowerOrEqual(this, maxLength);
+      ValidatorUtil.isLengthLowerOrEqual(this, maxLength);
 
   /// Checks if length of num is GREATER than maxLength.
   bool isLengthGreaterThan(int maxLength) =>
-      Validator.isLengthGreaterThan(this, maxLength);
+      ValidatorUtil.isLengthGreaterThan(this, maxLength);
 
   /// Checks if length of num is GREATER OR EQUAL to maxLength.
   bool isLengthGreaterOrEqual(int maxLength) =>
-      Validator.isLengthGreaterOrEqual(this, maxLength);
+      ValidatorUtil.isLengthGreaterOrEqual(this, maxLength);
 
   /// Checks if length of num is EQUAL than maxLength.
   bool isLengthEqualTo(int maxLength) =>
-      Validator.isLengthEqualTo(this, maxLength);
+      ValidatorUtil.isLengthEqualTo(this, maxLength);
 
   /// Checks if length of num is BETWEEN minLength to maxLength.
   bool isLengthBetween(int minLength, int maxLength) =>
-      Validator.isLengthBetween(this, minLength, maxLength);
+      ValidatorUtil.isLengthBetween(this, minLength, maxLength);
 }

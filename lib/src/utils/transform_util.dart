@@ -1,4 +1,4 @@
-import 'package:utils_extensions/utils/validator.dart';
+import 'package:utils_extensions/src/utils/validator_util.dart';
 
 class TransformUtil {
   /// Transform int value to binary
@@ -14,7 +14,7 @@ class TransformUtil {
   ///
   /// If First Only is `true`, the only letter get uppercase is the first letter
   static String capitalize(String s, {bool firstOnly = false}) {
-    if (Validator.isNullOrBlank(s)) return null;
+    if (ValidatorUtil.isNullOrBlank(s)) return null;
     if (firstOnly) return capitalizeFirst(s);
 
     List lst = s.split(' ');
@@ -26,21 +26,21 @@ class TransformUtil {
   /// Uppercase first letter inside string and let the others lowercase
   /// Example: your name => Your name
   static String capitalizeFirst(String s) {
-    if (Validator.isNullOrBlank(s)) return null;
+    if (ValidatorUtil.isNullOrBlank(s)) return null;
     return s[0].toUpperCase() + s.substring(1).toLowerCase();
   }
 
   /// Remove all whitespace inside string
   /// Example: your name => yourname
   static String removeAllWhitespace(String s) {
-    if (Validator.isNullOrBlank(s)) return null;
+    if (ValidatorUtil.isNullOrBlank(s)) return null;
     return s.replaceAll(' ', '');
   }
 
   /// Camelcase string
   /// Example: your name => yourName
   static String camelCase(String s) {
-    if (Validator.isNullOrBlank(s)) return null;
+    if (ValidatorUtil.isNullOrBlank(s)) return null;
     return s[0].toLowerCase() + removeAllWhitespace(capitalize(s)).substring(1);
   }
 
@@ -50,7 +50,7 @@ class TransformUtil {
   static String numericOnly(String s, {bool firstWordOnly = false}) {
     String numericOnlyStr = '';
     for (var i = 0; i < s.length; i++) {
-      if (Validator.isDigitOnly(s[i])) numericOnlyStr += s[i];
+      if (ValidatorUtil.isDigitOnly(s[i])) numericOnlyStr += s[i];
       if (firstWordOnly && numericOnlyStr.isNotEmpty && s[i] == " ") break;
     }
     return numericOnlyStr;
@@ -59,7 +59,7 @@ class TransformUtil {
   /// Transform string to SSN (Social Security Number)
   /// Example: 123456789
   static String toSSN(String s) {
-    if (Validator.isNumeric(s) && Validator.isLengthEqualTo(s, 9)) {
+    if (ValidatorUtil.isNumeric(s) && ValidatorUtil.isLengthEqualTo(s, 9)) {
       return "${s.substring(0, 3)}-${s.substring(3, 5)}-${s.substring(5, 9)}";
     }
     return null;

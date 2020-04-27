@@ -1,6 +1,6 @@
-import 'package:utils_extensions/utils/regexPattern.dart';
+import 'package:utils_extensions/src/utils/regex_pattern.dart';
 
-class Validator {
+class ValidatorUtil {
   /// Checks if data is null or blank (empty or only contains whitespace).
   static bool isNullOrBlank(dynamic s) {
     if (s == null) return true;
@@ -125,10 +125,10 @@ class Validator {
     return regex.hasMatch(s);
   }
 
-  /// Checks if string is uri.
-  static bool isUri(String s, [bool caseSensitive = false]) {
+  /// Checks if string is URL.
+  static bool isURL(String s, [bool caseSensitive = false]) {
     if (s == null) return false;
-    final RegExp regex = RegExp(RegexPattern.uri, caseSensitive: caseSensitive);
+    final RegExp regex = RegExp(RegexPattern.url, caseSensitive: caseSensitive);
     return regex.hasMatch(s);
   }
 

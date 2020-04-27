@@ -1,5 +1,5 @@
-import 'package:utils_extensions/utils/transform.dart';
-import 'package:utils_extensions/utils/validator.dart';
+import 'package:utils_extensions/src/utils/transform_util.dart';
+import 'package:utils_extensions/src/utils/validator_util.dart';
 
 extension StringParse on String {
   /// Transform string to int type
@@ -17,14 +17,14 @@ extension StringParse on String {
   /// Transform String millisecondsSinceEpoch (DateTime) to DateTime
   DateTime toDateTime() {
     int miliseconds = this.toInt(nullOnError: true);
-    if (Validator.isNullOrBlank(miliseconds)) return null;
+    if (ValidatorUtil.isNullOrBlank(miliseconds)) return null;
     return DateTime.fromMillisecondsSinceEpoch(miliseconds);
   }
 
   /// Transform string value to binary
   /// Example: 15 => 1111
   String toBinary({bool nullOnError = false}) {
-    if (!Validator.isNumeric(this)) {
+    if (!ValidatorUtil.isNumeric(this)) {
       if (nullOnError) return null;
       throw Exception("Only accepting integer value");
     }
@@ -34,7 +34,7 @@ extension StringParse on String {
   /// Transform binary to int value
   /// Example: 1111 => 15
   int toIntFromBinary({bool nullOnError = false}) {
-    if (!Validator.isBinary(this)) {
+    if (!ValidatorUtil.isBinary(this)) {
       if (nullOnError) return null;
       throw Exception("Only accepting binary value");
     }
@@ -45,7 +45,7 @@ extension StringParse on String {
   /// Example: 123456789
   String toSSN({bool nullOnError = false}) {
     String ssn = TransformUtil.toSSN(this);
-    if (!Validator.isNullOrBlank(ssn)) return ssn;
+    if (!ValidatorUtil.isNullOrBlank(ssn)) return ssn;
     if (nullOnError) return null;
     throw Exception("Only accepting SSN value");
   }
