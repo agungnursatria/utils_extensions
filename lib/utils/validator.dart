@@ -62,6 +62,69 @@ class Validator {
     return regex.hasMatch(s);
   }
 
+  /// Checks if string is an audio file.
+  static bool isAudio(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.audio, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an video file.
+  static bool isVideo(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.video, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an image file.
+  static bool isTxt(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.image, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an Doc file.
+  static bool isDocument(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.document, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an Excel file.
+  static bool isExcel(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.excel, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an PPT file.
+  static bool isPPT(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.ppt, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an APK file.
+  static bool isAPK(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.apk, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an video file.
+  static bool isPDF(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.pdf, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
+  /// Checks if string is an HTML file.
+  static bool isHTML(String s) {
+    if (s == null) return false;
+    final RegExp regex = RegExp(RegexPattern.html, caseSensitive: false);
+    return regex.hasMatch(s);
+  }
+
   /// Checks if string is uri.
   static bool isUri(String s, [bool caseSensitive = false]) {
     if (s == null) return false;

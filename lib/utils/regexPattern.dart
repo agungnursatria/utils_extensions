@@ -21,7 +21,34 @@ class RegexPattern {
   static Pattern vector = r'.(svg)$';
 
   /// Image regex
-  static Pattern image = r'.(jpeg|jpg|gif|png)$';
+  static Pattern image = r'.(jpeg|jpg|gif|png|bmp)$';
+
+  /// Audio regex
+  static Pattern audio = r'.(mp3|wav|wma|amr|ogg)$';
+
+  /// Video regex
+  static Pattern video = r'.(mp4|avi|wmv|rmvb|mpg|mpeg|3gp)$';
+
+  /// Txt regex
+  static Pattern txt = r'.txt$';
+
+  /// Document regex
+  static Pattern document = r'.(doc|docx)$';
+
+  /// Excel regex
+  static Pattern excel = r'.(xls|xlsx)$';
+
+  /// PPT regex
+  static Pattern ppt = r'.(ppt|pptx)$';
+
+  /// Document regex
+  static Pattern apk = r'.apk$';
+
+  /// PDF regex
+  static Pattern pdf = r'.pdf$';
+
+  /// HTML regex
+  static Pattern html = r'.html$';
 
   /// Username regex
   /// Requires 3-30 character

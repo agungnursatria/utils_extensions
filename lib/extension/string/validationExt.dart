@@ -11,11 +11,38 @@ extension StringValidation on String {
   /// Checks if string is boolean.
   bool isBool() => Validator.isBool(this);
 
-  /// Checks if string is vector image.
+  /// Checks if string is vector image file path.
   bool isVector() => Validator.isVector(this);
 
-  /// Checks if string is image.
+  /// Checks if string is image file path.
   bool isImage() => Validator.isImage(this);
+
+  /// Checks if string is audio file path.
+  bool isAudio() => Validator.isAudio(this);
+
+  /// Checks if string is video file path.
+  bool isVideo() => Validator.isVideo(this);
+
+  /// Checks if string is txt file path.
+  bool isTxt() => Validator.isTxt(this);
+
+  /// Checks if string is Doc file path.
+  bool isDocument() => Validator.isDocument(this);
+
+  /// Checks if string is Excel file path.
+  bool isExcel() => Validator.isExcel(this);
+
+  /// Checks if string is powerpoint file path.
+  bool isPPT() => Validator.isPPT(this);
+
+  /// Checks if string is APK file path.
+  bool isApk() => Validator.isAPK(this);
+
+  /// Checks if string is PDF file path.
+  bool isPDF() => Validator.isPDF(this);
+
+  /// Checks if string is html file path.
+  bool isHTML() => Validator.isHTML(this);
 
   /// Checks if string is uri.
   bool isUri() => Validator.isUri(this);
