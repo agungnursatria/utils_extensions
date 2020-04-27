@@ -7,10 +7,7 @@ class TransformUtil {
 
   /// Transform binary to int value
   /// Example: 1111 => 15
-  static int fromBinary(String binaryStr, {bool nullOnError = false}) =>
-      nullOnError
-          ? int.tryParse(binaryStr, radix: 2)
-          : int.parse(binaryStr, radix: 2);
+  static int fromBinary(String binaryStr) => int.tryParse(binaryStr, radix: 2);
 
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name
@@ -55,5 +52,14 @@ class TransformUtil {
       if (firstWordOnly && numericOnlyStr.isNotEmpty && s[i] == " ") break;
     }
     return numericOnlyStr;
+  }
+
+  /// Transform string to SSN (Social Security Number)
+  /// Example: 123456789
+  static String toSSN(String s) {
+    if (Validator.isNumeric(s) && Validator.isLengthEqualTo(s, 9)) {
+      return "${s.substring(0, 3)}-${s.substring(3, 5)}-${s.substring(5, 9)}";
+    }
+    return null;
   }
 }

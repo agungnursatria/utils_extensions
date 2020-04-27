@@ -2,15 +2,15 @@ import 'package:utils_extensions/utils/transform.dart';
 import 'package:utils_extensions/utils/validator.dart';
 
 extension StringParse on String {
-  /// Parse string to int type
+  /// Transform string to int type
   int toInt({bool nullOnError = false}) =>
       nullOnError ? int.tryParse(this) : int.parse(this);
 
-  /// Parse string to double type
+  /// Transform string to double type
   double toDouble({bool nullOnError = false}) =>
       nullOnError ? double.tryParse(this) : double.parse(this);
 
-  /// Parse string to num type
+  /// Transform string to num type
   num toNum({bool nullOnError = false}) =>
       nullOnError ? num.tryParse(this) : num.parse(this);
 
@@ -21,7 +21,8 @@ extension StringParse on String {
     return DateTime.fromMillisecondsSinceEpoch(miliseconds);
   }
 
-  /// Transform string value to binary string
+  /// Transform string value to binary
+  /// Example: 15 => 1111
   String toBinary({bool nullOnError = false}) {
     if (!Validator.isNumeric(this)) {
       if (nullOnError) return null;
@@ -37,17 +38,16 @@ extension StringParse on String {
       if (nullOnError) return null;
       throw Exception("Only accepting binary value");
     }
-    return TransformUtil.fromBinary(this, nullOnError: nullOnError);
+    return TransformUtil.fromBinary(this);
   }
 
-  /// Parse string to double type
+  /// Transform string value to SSN (Social Security Number)
   /// Example: 123456789
   String toSSN({bool nullOnError = false}) {
-    if (Validator.isNumeric(this) && Validator.isLengthEqualTo(this, 9)) {
-      return "${this.substring(0, 3)}-${this.substring(3, 5)}-${this.substring(5, 9)}";
-    }
+    String ssn = TransformUtil.toSSN(this);
+    if (!Validator.isNullOrBlank(ssn)) return ssn;
     if (nullOnError) return null;
-    throw Exception("Only accepting SSN (Numeric String) value");
+    throw Exception("Only accepting SSN value");
   }
 
   /// Capitalize each word inside string

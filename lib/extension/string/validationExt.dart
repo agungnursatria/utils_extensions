@@ -57,7 +57,7 @@ extension StringValidation on String {
   /// Checks if string is ISBN (10/13) (example: ISBN 978-3-642-11746-6, ISBN-10 3-642-11746-5,  978-3-642-11746-6).
   bool isISBN() => Validator.isISBN(this);
 
-  /// Checks if string is binary (example: 656-12-1212, 123456789).
+  /// Checks if string is SSN (example: 656-12-1212, 123456789).
   bool isSSN() => Validator.isSSN(this);
 
   /// Checks if string is Passport.

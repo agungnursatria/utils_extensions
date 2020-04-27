@@ -11,6 +11,7 @@ export 'package:utils_extensions/extension/map/validationExt.dart';
 
 /// export num
 export 'package:utils_extensions/extension/num/validationExt.dart';
+export 'package:utils_extensions/extension/num/widgetExt.dart';
 
 /// export set
 export 'package:utils_extensions/extension/set/validationExt.dart';
