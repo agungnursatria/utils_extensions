@@ -1,4 +1,5 @@
 import 'package:utils_extensions/utils/validator.dart';
+import 'package:utils_extensions/utils_extensions.dart';
 
 extension StringValidation on String {
   /// Checks if data is null or Blank (empty or only contains whitespace).
@@ -116,4 +117,9 @@ extension StringValidation on String {
   /// Checks if a contains b or b contains a (Treating or interpreting upper- and lowercase letters as being the same).
   bool isContainsAnyOnCaseInsensitive(String compareTo) =>
       Validator.isContainsAnyOnCaseInsensitive(this, compareTo);
+
+  bool isCamelCase() => this == TransformUtil.camelCase(this);
+
+  bool isCapitalized({bool firstOnly = false}) =>
+      this == TransformUtil.capitalize(this, firstOnly: firstOnly);
 }
