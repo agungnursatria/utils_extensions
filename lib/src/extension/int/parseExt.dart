@@ -10,8 +10,10 @@ extension IntParse on int {
   /// Example: 1111 => 15
   int fromBinary() => TransformUtil.fromBinary(this.toString());
 
-  /// Transform int millisecondsSinceEpoch (DateTime) to DateTime
-  DateTime toDateTime() => DateTime.fromMillisecondsSinceEpoch(this);
+  /// Transform int millisecondsSinceEpoch or microsecondsSinceEpoch (DateTime) to DateTime
+  DateTime toDateTime({bool isMicroSeconds}) => (isMicroSeconds)
+      ? DateTime.fromMicrosecondsSinceEpoch(this)
+      : DateTime.fromMillisecondsSinceEpoch(this);
 
   /// Transform int to SSN (Social Security Number)
   /// Example: 123456789
