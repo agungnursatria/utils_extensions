@@ -25,7 +25,9 @@ import 'package:utils_extension/utils_extension.dart';
 // Validator
 bool isNull();
 bool isNullOrBlank();
-bool isNumeric();
+bool isNum(String s); // True if string is num (int or double)
+bool isNumericOnly(String s); // True if string is only have numeric value 
+bool isAlphabetOnly(String s);
 bool isBool();
 bool isVector();
 bool isImage(); 
@@ -264,7 +266,9 @@ String toSSN(String s);
 ```dart
 bool isNull(dynamic s);
 bool isNullOrBlank(dynamic s);
-bool isNumeric(String s);
+bool isNum(String s); // True if string is num (int or double)
+bool isNumericOnly(String s); // True if string is only have numeric value 
+bool isAlphabetOnly(String s);
 bool isBool(String s);
 bool isVector(String s);
 bool isImage(String s); 
@@ -308,40 +312,4 @@ bool isGreaterThan(num compareTo);
 bool isEqualTo(num compareTo);
 bool isCamelCase(String s);
 bool isCapitalize(String s, {bool firstOnly = false});
-```
-
-### Utils - RegexPattern
-
-List of regex pattern used to validating data
-
-```dart
-Pattern hexColor;
-Pattern email;
-Pattern url;
-Pattern phone;
-Pattern vector;
-Pattern image;
-Pattern audio;
-Pattern video;
-Pattern txt;
-Pattern document;
-Pattern excel;
-Pattern ppt;
-Pattern apk;
-Pattern pdf;
-Pattern html;
-Pattern username;
-Pattern basicDateTime; // Date time in UTC and Iso8601
-Pattern binary;
-Pattern md5;
-Pattern sha1;
-Pattern sha256;
-Pattern ssn;
-Pattern ipv4;
-Pattern ipv6;
-Pattern isbn;
-Pattern github;
-Pattern passport;
-Pattern currency;
-Pattern digitOnly;
 ```
