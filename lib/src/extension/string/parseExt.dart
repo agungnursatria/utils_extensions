@@ -3,12 +3,20 @@ import 'package:utils_extensions/src/utils/validator_util.dart';
 
 extension StringParse on String {
   /// Transform string to int type
-  int toInt({bool nullOnError = false}) =>
-      nullOnError ? int.tryParse(this) : int.parse(this);
+  int toInt({bool nullOnError = false}) {
+    int i = int.tryParse(this);
+    if (i != null) return i;
+    if (nullOnError) return null;
+    throw FormatException('Can only acception double value');
+  }
 
   /// Transform string to double type
-  double toDouble({bool nullOnError = false}) =>
-      nullOnError ? double.tryParse(this) : double.parse(this);
+  double toDouble({bool nullOnError = false}) {
+    double d = double.tryParse(this);
+    if (d != null) return d;
+    if (nullOnError) return null;
+    throw FormatException('Can only acception double value');
+  }
 
   /// Transform string to num type
   num toNum({bool nullOnError = false}) =>

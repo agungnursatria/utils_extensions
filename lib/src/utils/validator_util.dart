@@ -1,4 +1,5 @@
 import 'package:utils_extensions/src/utils/regex_pattern.dart';
+import 'package:utils_extensions/utils_extensions.dart';
 
 class ValidatorUtil {
   /// Checks if data is null.
@@ -18,17 +19,6 @@ class ValidatorUtil {
       default:
         return s.toString() == 'null' || s.toString().trim().isEmpty;
     }
-  }
-
-  /// Checks if a contains b (Treating or interpreting upper- and lowercase letters as being the same).
-  static bool isCaseInsensitiveContains(String a, String b) =>
-      a.toLowerCase().contains(b.toLowerCase());
-
-  /// Checks if a contains b or b contains a (Treating or interpreting upper- and lowercase letters as being the same).
-  static bool isCaseInsensitiveContainsAny(String a, String b) {
-    String lowA = a.toLowerCase();
-    String lowB = b.toLowerCase();
-    return lowA.contains(lowB) || lowB.contains(lowA);
   }
 
   /// Checks if string is numeric.
@@ -389,6 +379,17 @@ class ValidatorUtil {
         isLengthLowerOrEqual(s, maxLength);
   }
 
+  /// Checks if a contains b (Treating or interpreting upper- and lowercase letters as being the same).
+  static bool isCaseInsensitiveContains(String a, String b) =>
+      a.toLowerCase().contains(b.toLowerCase());
+
+  /// Checks if a contains b or b contains a (Treating or interpreting upper- and lowercase letters as being the same).
+  static bool isCaseInsensitiveContainsAny(String a, String b) {
+    String lowA = a.toLowerCase();
+    String lowB = b.toLowerCase();
+    return lowA.contains(lowB) || lowB.contains(lowA);
+  }
+
   /// Checks if num a LOWER than num b.
   static bool isLowerThan(num a, num b) => a < b;
 
@@ -397,4 +398,11 @@ class ValidatorUtil {
 
   /// Checks if num a EQUAL than num b.
   static bool isEqual(num a, num b) => a == b;
+
+  /// Checks if string value is camelcase.
+  static bool isCamelCase(String s) => s == TransformUtil.camelCase(s);
+
+  /// Checks if string value is capitalize.
+  static bool isCapitalize(String s, {bool firstOnly = false}) =>
+      s == TransformUtil.capitalize(s, firstOnly: firstOnly);
 }

@@ -5,6 +5,10 @@ class TransformUtil {
   /// Example: 15 => 1111
   static String toBinary(int i) => i.toRadixString(2);
 
+  /// Transform int value to binary
+  /// Example: 15 => 1111
+  static int toBinaryInt(int i) => int.parse(i.toRadixString(2));
+
   /// Transform binary to int value
   /// Example: 1111 => 15
   static int fromBinary(String binaryStr) => int.tryParse(binaryStr, radix: 2);

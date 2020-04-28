@@ -1,4 +1,3 @@
-import 'package:utils_extensions/src/utils/transform_util.dart';
 import 'package:utils_extensions/src/utils/validator_util.dart';
 
 extension StringValidation on String {
@@ -141,17 +140,17 @@ extension StringValidation on String {
       ValidatorUtil.isLengthBetween(this, minLength, maxLength);
 
   /// Checks if a contains b (Treating or interpreting upper- and lowercase letters as being the same).
-  bool isContainsOnCaseInsensitive(String compareTo) =>
+  bool isCaseInsensitiveContains(String compareTo) =>
       ValidatorUtil.isCaseInsensitiveContains(this, compareTo);
 
   /// Checks if a contains b or b contains a (Treating or interpreting upper- and lowercase letters as being the same).
-  bool isContainsAnyOnCaseInsensitive(String compareTo) =>
+  bool isCaseInsensitiveContainsAny(String compareTo) =>
       ValidatorUtil.isCaseInsensitiveContainsAny(this, compareTo);
 
   /// Checks if string value is camelcase.
-  bool isCamelCase() => this == TransformUtil.camelCase(this);
+  bool isCamelCase() => ValidatorUtil.isCamelCase(this);
 
   /// Checks if string value is capitalize.
   bool isCapitalize({bool firstOnly = false}) =>
-      this == TransformUtil.capitalize(this, firstOnly: firstOnly);
+      ValidatorUtil.isCapitalize(this, firstOnly: firstOnly);
 }
