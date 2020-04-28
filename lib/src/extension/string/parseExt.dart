@@ -15,7 +15,11 @@ extension StringParse on String {
       nullOnError ? num.tryParse(this) : num.parse(this);
 
   /// Transform string to boolean type
-  bool toBool() => this == 'true';
+  bool toBool({bool falseOnError = false}) {
+    if (ValidatorUtil.isBool(this)) return this == 'true';
+    if (falseOnError) return false;
+    throw FormatException('Can only acception boolean value');
+  }
 
   /// Transform String millisecondsSinceEpoch (DateTime) to DateTime
   DateTime toDateTime() {
