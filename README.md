@@ -1,14 +1,27 @@
-# utilsextensions
+# UtilsExtension
 
-Flutter utils and data type extensions
+Flutter commonly used utility/helper with implanted function inside data types (Extension), like kotlin & swift extension.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+In your flutter project add the dependency:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```yml
+dependencies:
+  ...
+  utils_extension: ^0.1.0
+```
+
+#### Importing package
+```
+import 'package:utils_extension/utils_extension.dart';
+```
+
+## Utils & Extension Contents
+
+### Extension - String
+```dart
+String isNull();
+bool isNullOrEmpty();
+```
+

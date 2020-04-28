@@ -2,6 +2,9 @@ import 'package:utils_extensions/src/utils/transform_util.dart';
 import 'package:utils_extensions/src/utils/validator_util.dart';
 
 extension StringValidation on String {
+  /// Checks if data is null.
+  bool isNull() => ValidatorUtil.isNull(this);
+
   /// Checks if data is null or Blank (empty or only contains whitespace).
   bool isNullOrBlank() => ValidatorUtil.isNullOrBlank(this);
 
@@ -139,11 +142,11 @@ extension StringValidation on String {
 
   /// Checks if a contains b (Treating or interpreting upper- and lowercase letters as being the same).
   bool isContainsOnCaseInsensitive(String compareTo) =>
-      ValidatorUtil.isContainsOnCaseInsensitive(this, compareTo);
+      ValidatorUtil.isCaseInsensitiveContains(this, compareTo);
 
   /// Checks if a contains b or b contains a (Treating or interpreting upper- and lowercase letters as being the same).
   bool isContainsAnyOnCaseInsensitive(String compareTo) =>
-      ValidatorUtil.isContainsAnyOnCaseInsensitive(this, compareTo);
+      ValidatorUtil.isCaseInsensitiveContainsAny(this, compareTo);
 
   /// Checks if string value is camelcase.
   bool isCamelCase() => this == TransformUtil.camelCase(this);

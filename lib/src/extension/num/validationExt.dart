@@ -2,6 +2,12 @@ import 'package:utils_extensions/src/utils/validator_util.dart';
 
 /// Num extension also works on int and double data type
 extension NumValidation on num {
+  /// Checks if data is null.
+  bool isNull() => ValidatorUtil.isNull(this);
+
+  /// Checks if data is null or Blank (Empty or only contains whitespace).
+  bool isNullOrBlank() => ValidatorUtil.isNullOrBlank(this);
+
   /// Checks if num data is LOWER than comparedTo.
   bool isLowerThan(num compareTo) => this < compareTo;
 
@@ -20,9 +26,6 @@ extension NumValidation on num {
       ((maxLength != null)
           ? ValidatorUtil.isLengthLowerOrEqual(this, maxLength)
           : true);
-
-  /// Checks if data is null or Blank (Empty or only contains whitespace).
-  bool isNullOrBlank() => ValidatorUtil.isNullOrBlank(this);
 
   /// Checks if length of num is LOWER than maxLength.
   bool isLengthLowerThan(int maxLength) =>
