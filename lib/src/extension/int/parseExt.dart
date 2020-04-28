@@ -6,6 +6,9 @@ extension IntParse on int {
   /// Transform int value to binary string
   String toBinary() => TransformUtil.toBinary(this);
 
+  /// Transform int value to binary int
+  int toBinaryInt() => int.parse(TransformUtil.toBinary(this));
+
   /// Transform int value to binary string
   /// Example: 1111 => 15
   int fromBinary() => TransformUtil.fromBinary(this.toString());
