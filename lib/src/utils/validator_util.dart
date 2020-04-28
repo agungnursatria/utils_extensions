@@ -211,9 +211,10 @@ class ValidatorUtil {
   }
 
   /// Checks if string is hexadecimal.
+  /// Example: HexColor => #12F
   static bool isHexadecimal(String s) {
     if (isNull(s)) return false;
-    final RegExp regex = RegExp(RegexPattern.hexColor);
+    final RegExp regex = RegExp(RegexPattern.hexadecimal);
     return regex.hasMatch(s);
   }
 

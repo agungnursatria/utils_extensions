@@ -1,6 +1,6 @@
 class RegexPattern {
   /// Hexadecimal regex
-  static Pattern hexColor = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
+  static Pattern hexadecimal = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
 
   /// Email regex
   static Pattern email =
@@ -51,9 +51,9 @@ class RegexPattern {
   static Pattern html = r'.html$';
 
   /// Username regex
-  /// Requires 3-30 character
-  /// Allowing "_" and "." in middle
-  static Pattern username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]{1,28}[a-zA-Z0-9]$';
+  /// Requires minimum 3 character
+  /// Allowing "_" and "." in middle of name
+  static Pattern username = r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$';
 
   /// DateTime regex (UTC)
   /// Unformatted date time (UTC and Iso8601)
