@@ -14,6 +14,9 @@ extension StringParse on String {
   num toNum({bool nullOnError = false}) =>
       nullOnError ? num.tryParse(this) : num.parse(this);
 
+  /// Transform string to boolean type
+  bool toBool() => this == 'true';
+
   /// Transform String millisecondsSinceEpoch (DateTime) to DateTime
   DateTime toDateTime() {
     int miliseconds = this.toInt(nullOnError: true);
