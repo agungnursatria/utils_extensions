@@ -54,7 +54,7 @@ class TransformUtil {
   static String numericOnly(String s, {bool firstWordOnly = false}) {
     String numericOnlyStr = '';
     for (var i = 0; i < s.length; i++) {
-      if (ValidatorUtil.isDigitOnly(s[i])) numericOnlyStr += s[i];
+      if (ValidatorUtil.isNumericOnly(s[i])) numericOnlyStr += s[i];
       if (firstWordOnly && numericOnlyStr.isNotEmpty && s[i] == " ") break;
     }
     return numericOnlyStr;
@@ -63,7 +63,7 @@ class TransformUtil {
   /// Transform string to SSN (Social Security Number)
   /// Example: 123456789
   static String toSSN(String s) {
-    if (ValidatorUtil.isNumeric(s) && ValidatorUtil.isLengthEqualTo(s, 9)) {
+    if (ValidatorUtil.isNum(s) && ValidatorUtil.isLengthEqualTo(s, 9)) {
       return "${s.substring(0, 3)}-${s.substring(3, 5)}-${s.substring(5, 9)}";
     }
     return null;

@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  regexpattern: ^0.1.2
 
 dev_dependencies:
   flutter_test:

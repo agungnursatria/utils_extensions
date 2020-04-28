@@ -7,8 +7,15 @@ extension StringValidation on String {
   /// Checks if data is null or Blank (empty or only contains whitespace).
   bool isNullOrBlank() => ValidatorUtil.isNullOrBlank(this);
 
-  /// Checks if string is numeric.
-  bool isNumeric() => ValidatorUtil.isNumeric(this);
+  /// Checks if string is num (int or double).
+  bool isNum() => ValidatorUtil.isNum(this);
+
+  /// Checks if string is numeric only.
+  /// Numeric only doesnt accepting "." which double data type have
+  bool isNumericOnly() => ValidatorUtil.isNumericOnly(this);
+
+  /// Checks if string consist only Alphabet. (No Whitespace)
+  bool isAlphabetOnly(String s) => ValidatorUtil.isAlphabetOnly(s);
 
   /// Checks if string is boolean.
   bool isBool() => ValidatorUtil.isBool(this);

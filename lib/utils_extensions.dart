@@ -24,6 +24,5 @@ export 'package:utils_extensions/src/extension/string/validationExt.dart';
 
 /// export utils
 export 'package:utils_extensions/src/utils/validator_util.dart';
-export 'package:utils_extensions/src/utils/regex_pattern.dart';
 export 'package:utils_extensions/src/utils/transform_util.dart';
 export 'package:utils_extensions/src/utils/enum_util.dart';

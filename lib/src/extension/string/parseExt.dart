@@ -39,7 +39,7 @@ extension StringParse on String {
   /// Transform string value to binary
   /// Example: 15 => 1111
   String toBinary({bool nullOnError = false}) {
-    if (!ValidatorUtil.isNumeric(this)) {
+    if (!ValidatorUtil.isNum(this)) {
       if (nullOnError) return null;
       throw FormatException("Only accepting integer value");
     }
