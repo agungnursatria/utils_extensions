@@ -7,13 +7,8 @@ extension IntParse on int {
   String toBinary() => TransformUtil.toBinary(this);
 
   /// Transform int value to binary string
-  int fromBinary({bool nullOnError = false}) {
-    if (!ValidatorUtil.isBinary(this.toString())) {
-      if (nullOnError) return null;
-      throw Exception("Only accepting binary value");
-    }
-    return TransformUtil.fromBinary(this.toString());
-  }
+  /// Example: 1111 => 15
+  int fromBinary() => TransformUtil.fromBinary(this.toString());
 
   /// Transform int millisecondsSinceEpoch (DateTime) to DateTime
   DateTime toDateTime() => DateTime.fromMillisecondsSinceEpoch(this);

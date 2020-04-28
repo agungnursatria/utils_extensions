@@ -26,7 +26,7 @@ extension StringParse on String {
   String toBinary({bool nullOnError = false}) {
     if (!ValidatorUtil.isNumeric(this)) {
       if (nullOnError) return null;
-      throw Exception("Only accepting integer value");
+      throw FormatException("Only accepting integer value");
     }
     return TransformUtil.toBinary(int.parse(this));
   }
@@ -36,7 +36,7 @@ extension StringParse on String {
   int toIntFromBinary({bool nullOnError = false}) {
     if (!ValidatorUtil.isBinary(this)) {
       if (nullOnError) return null;
-      throw Exception("Only accepting binary value");
+      throw FormatException("Only accepting binary value");
     }
     return TransformUtil.fromBinary(this);
   }
@@ -47,7 +47,7 @@ extension StringParse on String {
     String ssn = TransformUtil.toSSN(this);
     if (!ValidatorUtil.isNullOrBlank(ssn)) return ssn;
     if (nullOnError) return null;
-    throw Exception("Only accepting SSN value");
+    throw FormatException("Only accepting SSN value");
   }
 
   /// Capitalize each word inside string
