@@ -9,12 +9,12 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  utils_extension: ^0.1.0
+  utils_extensions: ^0.1.0
 ```
 
 #### Importing package
 ```dart
-import 'package:utils_extension/utils_extension.dart';
+import 'package:utils_extensions/utils_extensions.dart';
 ```
 
 ## Utils & Extension Contents

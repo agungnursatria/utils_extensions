@@ -21,6 +21,7 @@ export 'package:utils_extensions/src/extension/set/validationExt.dart';
 export 'package:utils_extensions/src/extension/string/parseExt.dart';
 export 'package:utils_extensions/src/extension/string/exceptionExt.dart';
 export 'package:utils_extensions/src/extension/string/validationExt.dart';
+export 'package:utils_extensions/src/extension/string/widgetExt.dart';
 
 /// export utils
 export 'package:utils_extensions/src/utils/validator_util.dart';
