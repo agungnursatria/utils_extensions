@@ -21,7 +21,6 @@ import 'package:utils_extension/utils_extension.dart';
 
 ### Extension - String
 ```dart
-
 // Validator
 bool isNull();
 bool isNullOrBlank();

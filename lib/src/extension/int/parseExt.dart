@@ -14,7 +14,7 @@ extension IntParse on int {
   int fromBinary() => TransformUtil.fromBinary(this.toString());
 
   /// Transform int millisecondsSinceEpoch or microsecondsSinceEpoch (DateTime) to DateTime
-  DateTime toDateTime({bool isMicroSeconds}) => (isMicroSeconds)
+  DateTime toDateTime({bool isMicroSeconds = false}) => (isMicroSeconds)
       ? DateTime.fromMicrosecondsSinceEpoch(this)
       : DateTime.fromMillisecondsSinceEpoch(this);
 
