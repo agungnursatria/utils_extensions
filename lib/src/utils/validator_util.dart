@@ -3,7 +3,7 @@ import 'package:utils_extensions/utils_extensions.dart';
 
 class ValidatorUtil {
   /// Checks if data is null.
-  static bool isNull(dynamic s) => isNull(s);
+  static bool isNull(dynamic s) => s == null;
 
   /// Checks if data is null or blank (empty or only contains whitespace).
   static bool isNullOrBlank(dynamic s) {
