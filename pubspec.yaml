@@ -1,6 +1,6 @@
 name: utils_extensions
 description: Flutter commonly used utility/helper with implanted function inside data types (Extension), like kotlin & swift extension.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/agungnursatria/utils_extensions
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  regexpattern: ^0.1.2
+  regexpattern: ^0.2.3
 
 dev_dependencies:
   flutter_test:

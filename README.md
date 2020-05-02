@@ -9,7 +9,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  utils_extensions: ^0.1.0
+  utils_extensions: ^0.1.1
 ```
 
 #### Importing package
